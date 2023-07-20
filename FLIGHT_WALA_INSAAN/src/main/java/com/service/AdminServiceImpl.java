@@ -6,6 +6,7 @@ import com.dao.AdminDao;
 import com.dao.Flight;
 import com.dao.FlightDao;
 import com.entity.Admin;
+import com.exception.FlightBookingException;
 
 public class AdminServiceImpl implements AdminService {
     private AdminDao adminDao;
@@ -18,36 +19,53 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public boolean registerAdmin(String username, String password) {
-        // Implement admin registration logic
+    	 if (adminDao.findByUsername(username) != null) {
+             throw new FlightBookingException("Username already exists. Please choose a different username.");
+         }
+
+         Admin admin = new Admin(null, password, password);
+         admin.setUsername(username);
+         admin.setPassword(password);
+
+         adminDao.save(admin);
+         return true;
     }
 
     @Override
     public Admin loginAdmin(String username, String password) {
         // Implement admin login logic
+    	
+        Admin admin = adminDao.findByUsername(username);
+        if (admin == null || !admin.getPassword().equals(password)) {
+            throw new FlightBookingException("Invalid username or password. Please try again.");
+        }
+
+        return admin;
     }
+    
 
 
     @Override
     public List<Flight> getAllFlights() {
-        // Implement logic to get all flights
+    	  return flightDao.getAllFlights();
     }
-    // Implement other admin-related methods
+
 
 	@Override
 	public void addFlight(Flight flight) {
-		// TODO Auto-generated method stub
+		 flightDao.save(flight);
 		
 	}
 
 	@Override
 	public void updateFlight(Flight flight) {
-		// TODO Auto-generated method stub
+	     flightDao.update(flight);
 		
 	}
 
 	@Override
 	public void removeFlight(Flight flight) {
-		// TODO Auto-generated method stub
+		flightDao.delete(flight);
 		
 	}
 }

@@ -18,4 +18,39 @@ public class Booking {
     @ManyToOne
     private Flight flight;
     // other booking attributes, getters, setters
+
+	public Booking(Long id, Customer customer, Flight flight) {
+		super();
+		this.id = id;
+		this.customer = customer;
+		this.flight = flight;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public Flight getFlight() {
+		return flight;
+	}
+
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+    
+    
+    
+    
 }
