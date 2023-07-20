@@ -1,15 +1,8 @@
-package com.dao;
+package com.ui;
 
 import java.time.LocalDateTime;
 
 public class Flight {
-
-	public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDateTime departureTime,
-			LocalDateTime arrivalTime, double price) {
-		// TODO Auto-generated constructor stub
-	}
-
-
 
 	public void setDepartureCity(String departureCity) {
 		// TODO Auto-generated method stub

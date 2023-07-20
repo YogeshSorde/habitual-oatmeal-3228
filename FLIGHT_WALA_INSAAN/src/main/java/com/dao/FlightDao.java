@@ -8,5 +8,4 @@ public interface FlightDao {
     void save(Flight flight);
     void update(Flight flight);
     void delete(Flight flight);
-    // other flight-related methods
 }
