@@ -1,5 +1,7 @@
 package com.dao;
 
+import org.hibernate.SessionFactory;
+
 import com.entity.Admin;
 
 import jakarta.transaction.Transaction;
@@ -13,22 +15,14 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public Admin findByUsername(String username) {
-        try (Session session = sessionFactory.openSession()) {
-            Query<Admin> query = session.createQuery("FROM Admin WHERE username = :username", Admin.class);
-            query.setParameter("username", username);
-            return query.uniqueResult();
-        }
+		return null;
+        // Implement logic to find an admin by username using Hibernate Session
     }
 
     @Override
     public void save(Admin admin) {
-        try (Session session = sessionFactory.openSession()) {
-            Transaction transaction = session.beginTransaction();
-            session.save(admin);
-            transaction.commit();
-        }
+        // Implement logic to save an admin using Hibernate Session
     }
 
-	
-
+    // Implement other admin-related methods as needed
 }

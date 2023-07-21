@@ -8,11 +8,13 @@ import com.dao.Flight;
 import com.entity.Customer;
 
 public interface CustomerService {
-    boolean registerCustomer(String username, String password);
-    Customer loginCustomer(String username, String password);
-    List<Flight> searchFlights(String departure, String arrival, LocalDate date, int passengerCount);
+    void registerCustomer(String username, String password);
+    void loginCustomer(String username, String password);
+    List<com.ui.Flight> searchFlights(String departure, String arrival, LocalDate date, int passengerCount);
     void bookFlight(Customer customer, Flight flight, int passengerCount);
-    List<Booking> getCustomerBookings(Long customerId);
-    void cancelBooking(Booking booking);
+    List<com.service.Booking> getCustomerBookings(Long customerId);
+    void cancelBooking(com.ui.Booking booking);
     // other customer-related methods
+	com.ui.Flight getFlightById(long flightId);
+
 }

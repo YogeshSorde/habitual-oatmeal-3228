@@ -1,6 +1,7 @@
 package com.ui;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 import com.entity.Customer;
@@ -128,7 +129,7 @@ public class CustomerUI {
         int passengerCount = scanner.nextInt();
         scanner.nextLine(); // Consume the newline character
 
-        Customer customer = ...; // Get the logged-in customer from previous login step
+        String customer = ""; // Get the logged-in customer from previous login step
         Flight flight = customerService.getFlightById(flightId);
         if (flight == null) {
             System.out.println("Invalid flight ID. Please try again.");
