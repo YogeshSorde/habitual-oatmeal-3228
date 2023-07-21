@@ -34,4 +34,39 @@ public class Flight {
 		return null;
 	}
 
+	public String getDeparture() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getArrival() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getPrice() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	public String getAvailableSeats() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
 }

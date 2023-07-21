@@ -14,39 +14,28 @@ public class BookingDaoImpl implements BookingDao {
         this.sessionFactory = sessionFactory;
     }
 
- 
+    @Override
+    public void save(Booking booking) {
+        // Implement logic to save a booking using Hibernate Session
+    }
 
     @Override
     public List<Booking> findBookingsByCustomerId(Long customerId) {
-        try (Session session = sessionFactory.openSession()) {
-            Query<Booking> query = session.createQuery("FROM Booking WHERE customer.id = :customerId", Booking.class);
-            query.setParameter("customerId", customerId);
-            return query.list();
-        }
+		return null;
+        // Implement logic to find bookings by customer ID using Hibernate Session
     }
 
- 
+    @Override
+    public Booking findById(Long id) {
+		return null;
+        // Implement logic to find a booking by ID using Hibernate Session
+    }
 
-	@Override
-	public void save(Booking booking) {
-		// TODO Auto-generated method stub
-		
-	     try (Session session = sessionFactory.openSession()) {
-	            Transaction transaction = session.beginTransaction();
-	            session.save(booking);
-	            transaction.commit();
-	        }
-		
-	}
+    @Override
+    public void delete(Booking booking) {
+        // Implement logic to delete a booking using Hibernate Session
+    }
 
-	@Override
-	public void delete(Booking booking) {
-		// TODO Auto-generated method stub
-		  try (Session session = sessionFactory.openSession()) {
-	            Transaction transaction = session.beginTransaction();
-	            session.delete(booking);
-	            transaction.commit();
-	        }
-	}
+    // Implement other booking-related methods as needed
 }
 

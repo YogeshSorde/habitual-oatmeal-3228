@@ -11,6 +11,11 @@ public class Flight {
 
 
 
+	public String getFlightNumber() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public void setDepartureCity(String departureCity) {
 		// TODO Auto-generated method stub
 		
@@ -36,9 +41,8 @@ public class Flight {
 		
 	}
 
-	public String getFlightNumber() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+
+
 
 }

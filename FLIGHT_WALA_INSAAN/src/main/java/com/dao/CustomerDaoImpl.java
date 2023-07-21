@@ -1,5 +1,7 @@
 package com.dao;
 
+import org.hibernate.SessionFactory;
+
 import com.entity.Customer;
 
 import jakarta.transaction.Transaction;
@@ -13,25 +15,14 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public Customer findByUsername(String username) {
-        try (Session session = sessionFactory.openSession()) {
-            Query<Customer> query = session.createQuery("FROM Customer WHERE username = :username", Customer.class);
-            query.setParameter("username", username);
-            return query.uniqueResult();
-        }
+		return null;
+        // Implement logic to find a customer by username using Hibernate Session
     }
 
+    @Override
+    public void save(Customer customer) {
+        // Implement logic to save a customer using Hibernate Session
+    }
 
-
-	@Override
-	public void save(Customer customer) {
-		// TODO Auto-generated method stub
-		
-		   try (Session session = sessionFactory.openSession()) {
-	            Transaction transaction = session.beginTransaction();
-	            session.save(customer);
-	            transaction.commit();
-	        }
-		
-	}
+    // Implement other customer-related methods as needed
 }
-
